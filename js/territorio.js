@@ -28,7 +28,7 @@
       const pdfUrl = data[0].PDF_URL;
 
       container.innerHTML = `
-        <div class="sonido-card">
+        <div class="territorio-card">
           <iframe 
             src="${pdfUrl}" 
             class="pdf-frame"

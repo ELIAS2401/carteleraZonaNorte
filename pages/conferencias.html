@@ -18,31 +18,31 @@
 
 <body>
 
-<header class="header">
-    <div class="header-left">
-        <a href="../index.html">
+    <header class="app-header">
+        <div class="header-top">
             <i class="fa-solid fa-location-dot"></i>
             <span>Norte San Fernando</span>
-        </a>
-    </div>
+        </div>
 
-    <div class="header-right">
-        <select class="menu-select" id="menuSecciones">
-            <option value="">Secciones</option>
-        </select>
-    </div>
-</header>
+        <div class="header-actions">
+            <input type="search" id="searchInput" placeholder="Buscar…">
+            <select id="menuSecciones">
+                <option value="">Secciones</option>
+            </select>
+        </div>
+    </header>
 
-<main class="conferencias-container">
-    <h1 class="conferencias-title">
-        <i class="fa-solid fa-microphone"></i>
-        Conferencias
-    </h1>
+    <main class="conferencias-container">
+        <h1 class="conferencias-title">
+            <i class="fa-solid fa-microphone"></i>
+            Conferencias
+        </h1>
 
-    <div id="conferenciasContainer" class="conferencias-list"></div>
-</main>
+        <div id="conferenciasContainer" class="conferencias-list"></div>
+    </main>
 
-<script src="../js/conferencias.js"></script>
-<script src="../js/header.js"></script>
+    <script src="../js/conferencias.js"></script>
+    <script src="../js/header.js"></script>
 </body>
+
 </html>

@@ -1,69 +1,68 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+}
+
 /* HEADER */
-
-a {
-    text-decoration: none;
-    color: inherit;
+.app-header {
+  background: #1f2a33;
+  color: white;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.header {
-    background-color: #1f2a33;
-    color: #fff;
-    padding: 12px 24px;
-    display: flex;
+/* TITULO */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* BUSCADOR + SELECT */
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.header-actions input,
+.header-actions select {
+  flex: 1;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+}
+
+a.header-top a {
+  color: white;
+  text-decoration: none;
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+  .app-header {
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-}
+    padding: 14px 24px;
+  }
 
-.header-left {
+  .header-top {
+    justify-content: flex-start;
     font-size: 1.1rem;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.header-right {
-    display: flex;
-    gap: 10px;
-}
-
-.menu-select {
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 10px 12px;
   }
 
-  .header-left {
-    justify-content: center;
-  }
-
-  .header-left span {
-    font-size: 1rem;
-  }
-
-  .header-right {
-    display: flex;
-    gap: 8px;
-    width: 100%;
-  }
-
-  .search-input {
-    flex: 1;
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  .menu-select {
-    font-size: 1rem;
-    padding: 10px;
+  .header-actions {
+    max-width: 420px;
   }
 }
-

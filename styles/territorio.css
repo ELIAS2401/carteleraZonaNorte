@@ -4,3 +4,17 @@
     border: none;
     border-radius: 12px;
 }
+.title {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 600;
+  color: #1f2a33;
+}
+
+.territorio-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}

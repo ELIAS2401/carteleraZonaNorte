@@ -1,112 +1,56 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
-body {
-  margin: 0;
-  background-color: #f4f6f8;
-  color: #2c2c2c;
-}
-
-.menu-select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-}
-
-/* MAIN */
-.container {
-  padding: 30px;
+.app-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px;
 }
 
 .title {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 20px 0;
   font-weight: 600;
   color: #1f2a33;
 }
 
-/* CARDS */
+/* GRID */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-.card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
-
-.card i {
-  font-size: 2rem;
-  color: #3a5f7d;
-  margin-bottom: 10px;
-}
-
-.card h3 {
-  margin: 10px 0 6px;
-  font-size: 1.1rem;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-}
+/* CARD */
 .card-link {
   text-decoration: none;
   color: inherit;
 }
-@media (max-width: 768px) {
-  .container {
-    padding: 20px 12px;
-  }
 
-  .title {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
 
-  /* CARDS */
+.card i {
+  font-size: 2.4rem;
+  color: #3a5f7d;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 8px 0 6px;
+  font-size: 1.15rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* DESKTOP */
+@media (min-width: 700px) {
   .cards-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
-  .card i {
-    font-size: 2.2rem;
-  }
-
-  .card h3 {
-    font-size: 1.1rem;
-  }
-
-  .card p {
-    font-size: 0.95rem;
-  }
-}
-
-html {
-  font-size: 16px;
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 17px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 }
