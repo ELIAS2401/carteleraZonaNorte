@@ -4,44 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Conferencias</title>
+
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
-    <link rel="stylesheet" href="../styles/index.css">
-    <link rel="stylesheet" href="../styles/sonido.css">
+
     <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/conferencias.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="header-left">
-            <a href="../index.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Norte San Fernando</span>
-            </a>
-        </div>
+<header class="header">
+    <div class="header-left">
+        <a href="../index.html">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Norte San Fernando</span>
+        </a>
+    </div>
 
-        <div class="header-right">
-            <select class="menu-select" id="menuSecciones">
-                <option value="">Secciones</option>
-            </select>
-        </div>
-    </header>
+    <div class="header-right">
+        <select class="menu-select" id="menuSecciones">
+            <option value="">Secciones</option>
+        </select>
+    </div>
+</header>
 
-    <main class="container">
-        <h1 class="title" id="tituloConferencias">
-            <i class="fa-solid fa-microphone"></i>
-            Conferencias
-        </h1>
+<main class="conferencias-container">
+    <h1 class="conferencias-title">
+        <i class="fa-solid fa-microphone"></i>
+        Conferencias
+    </h1>
 
-        <div id="conferenciasContainer"></div>
-    </main>
+    <div id="conferenciasContainer" class="conferencias-list"></div>
+</main>
 
-    <script src="../js/conferencias.js"></script>
-    <script src="../js/header.js"></script>
+<script src="../js/conferencias.js"></script>
+<script src="../js/header.js"></script>
 </body>
-
 </html>

@@ -105,3 +105,65 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+
+.sonido-card h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 600px) {
+
+  .container {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .bloque {
+    padding: 12px;
+    margin-top: 18px;
+  }
+
+  .bloque-titulo {
+    font-size: 1rem;
+  }
+
+  /* Tabla → formato vertical en celular */
+  .sonido-table tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .sonido-table td {
+    display: block;
+    text-align: left !important;
+    padding: 6px 0;
+    font-size: 0.9rem;
+  }
+
+  .sonido-table td.titulo {
+    font-weight: 600;
+  }
+
+  .sonido-table td.lector,
+  .sonido-table td.ayudante {
+    color: #555;
+    font-size: 0.85rem;
+  }
+
+  /* Selector de semanas */
+  .semana-selector {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .semana-selector button {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}

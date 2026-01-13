@@ -1,0 +1,105 @@
+* {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #2c2c2c;
+}
+
+/* CONTENEDOR */
+.conferencias-container {
+  padding: 24px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARD */
+.conferencia-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* FECHA */
+.conferencia-fecha {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 1.3rem;
+  color: #1f2a33;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+/* TABLA */
+.conferencia-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.conferencia-table th {
+  background: #f1f4f7;
+  padding: 12px;
+  text-align: left;
+  color: #3a5f7d;
+}
+
+.conferencia-table td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+
+.conferencia-table tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .conferencia-table,
+  .conferencia-table thead,
+  .conferencia-table tbody,
+  .conferencia-table th,
+  .conferencia-table td,
+  .conferencia-table tr {
+    display: block;
+  }
+
+  .conferencia-table thead {
+    display: none;
+  }
+
+  .conferencia-table tr {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+
+  .conferencia-table td {
+    border: none;
+    padding: 6px 0;
+    font-size: 1rem;
+  }
+
+  .conferencia-table td:nth-child(1)::before {
+    content: "🎤 Conferencista: ";
+    font-weight: 600;
+  }
+
+  .conferencia-table td:nth-child(2)::before {
+    content: "📖 Título: ";
+    font-weight: 600;
+  }
+
+  .conferencia-table td:nth-child(3)::before {
+    content: "🎵 Canción: ";
+    font-weight: 600;
+  }
+}
