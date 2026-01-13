@@ -1,45 +1,69 @@
+/* GRID */
 .predicacion-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
 }
 
+/* CARD DIA */
 .dia-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
 }
 
+/* TITULO DIA */
 .dia-card h2 {
-    margin: 0 0 12px;
-    color: #1f2a33;
-    font-size: 1.2rem;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 6px;
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1f2a33;
+  border-bottom: 2px solid #e6e6e6;
+  padding-bottom: 8px;
 }
 
+/* SALIDA */
 .salida {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 10px;
-    border-radius: 10px;
-    background: #f6f8fa;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f6f8fa;
+  margin-bottom: 14px;
 }
 
+/* HORA */
 .salida .hora {
-    font-weight: bold;
-    color: #3a5f7d;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2f5d7c;
 }
 
+/* ICONOS */
 .salida i {
-    margin-right: 6px;
-    color: #3a5f7d;
+  margin-right: 6px;
+  color: #2f5d7c;
 }
 
+/* TEXTO */
 .salida span {
-    font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+
+  .dia-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .salida {
+    gap: 10px;
+  }
+
+  .salida span {
+    font-size: 1.1rem;
+  }
 }

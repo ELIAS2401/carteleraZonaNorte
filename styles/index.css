@@ -9,34 +9,6 @@ body {
   color: #2c2c2c;
 }
 
-/* HEADER */
-.header {
-  background-color: #1f2a33;
-  color: #fff;
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-left {
-  font-size: 1.1rem;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.header-right {
-  display: flex;
-  gap: 10px;
-}
-
-.search-input {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-}
-
 .menu-select {
   padding: 6px 10px;
   border-radius: 6px;
@@ -95,4 +67,32 @@ body {
 .card-link {
   text-decoration: none;
   color: inherit;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  /* CARDS */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
 }
