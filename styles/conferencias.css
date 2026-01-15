@@ -32,6 +32,7 @@ body {
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  margin-bottom: 24px; 
 }
 
 /* FECHA */
@@ -42,6 +43,14 @@ body {
   color: #1f2a33;
   border-bottom: 1px solid #eee;
   padding-bottom: 6px;
+}
+
+.conferencia-congregacion {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a657d;
+  margin-bottom: 16px;
 }
 
 /* TABLA */
@@ -105,11 +114,16 @@ body {
   }
 
   .conferencia-table td:nth-child(2)::before {
-    content: "📖 Título: ";
+    content: "🏛️ Congregación: ";
     font-weight: 600;
   }
 
   .conferencia-table td:nth-child(3)::before {
+    content: "📖 Título: ";
+    font-weight: 600;
+  }
+
+  .conferencia-table td:nth-child(4)::before {
     content: "🎵 Canción: ";
     font-weight: 600;
   }

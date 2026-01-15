@@ -45,7 +45,7 @@
         <table class="sonido-table">
           <thead>
             <tr>
-              <th>🎥 Auditorio</th>
+              <th>🏛️ Auditorio</th>
               <th>🚪 Puertas</th>
             </tr>
           </thead>

@@ -13,11 +13,21 @@
   fetch(URL_TITULOS)
     .then(res => res.json())
     .then(data => {
-      const fila = data.find(f => f.seccion === 'conferencias');
-      if (fila && titulo) {
-        titulo.innerHTML = `<i class="fa-solid fa-microphone"></i> ${fila.titulo}`;
-      }
+
+      // Buscar la fila de conferencias que tenga subtítulo
+      const fila = data.find(
+        f => f.seccion === 'conferencias' && f.subtitulo
+      ) || data.find(f => f.seccion === 'conferencias');
+
+      if (!fila || !titulo) return;
+
+      titulo.innerHTML = `
+      <i class="fa-solid fa-microphone"></i>
+      ${fila.titulo}
+      ${fila.subtitulo ? `<div class="subtitle">${fila.subtitulo}</div>` : ''}
+    `;
     });
+
 
   // 👉 Cargar conferencias
   fetch(URL_CONFERENCIAS)
@@ -37,29 +47,34 @@
 
     Object.keys(porFecha).forEach(fecha => {
       const card = document.createElement('div');
-      card.className = 'conferencia-card';
+      card.className = 'conferencia-card'; ''
+
+      const congregacion = porFecha[fecha][0].CONGREGACION;
 
       card.innerHTML = `
-    <h2 class="conferencia-fecha">${fecha}</h2>
-    <table class="conferencia-table">
-      <thead>
+  <h2 class="conferencia-fecha">${fecha}</h2>
+
+  <table class="conferencia-table">
+    <thead>
+      <tr>
+        <th>🎤 Orador</th>
+        <th>🏛️ Congregación</th>
+        <th>📖 Título</th>
+        <th>🎵 Canción</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${porFecha[fecha].map(c => `
         <tr>
-          <th>🎤 Conferencista</th>
-          <th>📖 Título</th>
-          <th>🎵 Canción</th>
+          <td>${c.NOMBRE}</td>
+          <td>${c.CONGREGACION}</td>
+          <td>${c.TITULO}</td>
+          <td>${c.CANCION || '—'}</td>
         </tr>
-      </thead>
-      <tbody>
-        ${porFecha[fecha].map(c => `
-          <tr>
-            <td>${c.NOMBRE}</td>
-            <td>${c.TITULO}</td>
-            <td>${c.CANCION || '—'}</td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>
-  `;
+      `).join('')}
+    </tbody>
+  </table>
+`;
 
       container.appendChild(card);
     });
