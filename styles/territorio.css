@@ -9,36 +9,127 @@
 }
 
 body {
-  background-color: #f4f6f8;
+  background: #f4f6f8;
   color: #2c2c2c;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* =====================
-   Contenedor principal
+   HEADER
+===================== */
+.app-header {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  padding: 10px 14px;
+}
+
+/* TOP */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+/* ACTIONS */
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.header-actions input,
+.header-actions select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+/* =====================
+   HEADER MOBILE
+===================== */
+@media (max-width: 420px) {
+  .app-header {
+    padding: 8px 12px;
+  }
+
+  .header-top {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .header-actions input,
+  .header-actions select {
+    padding: 7px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* =====================
+   HEADER DESKTOP
+===================== */
+@media (min-width: 700px) {
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-top {
+    margin-bottom: 0;
+    justify-content: flex-start;
+    font-size: 1rem;
+  }
+
+  .header-actions {
+    max-width: 420px;
+    width: 100%;
+    flex-direction: row;
+  }
+}
+
+/* =====================
+   CONTENEDOR PRINCIPAL TERRITORIO
 ===================== */
 .container {
-  max-width: 820px;
+  max-width: 820px; /* o 100% si querés full ancho */
   margin: auto;
   padding: 16px;
 }
 
 /* =====================
-   Título principal
+   TÍTULOS PRINCIPALES
 ===================== */
-.container .title {
-  text-align: center;
-  margin: 20px 0;
-  font-weight: 600;
-  color: #1f2a33;
+.title {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2a33;
+  text-align: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 /* =====================
-   Tarjetas de territorio
+   TARJETAS TERRITORIO
 ===================== */
 .territorio-card {
   background: #ffffff;
@@ -49,7 +140,7 @@ body {
 }
 
 /* =====================
-   PDF embebido
+   PDF EMBEBIDO
 ===================== */
 .pdf-frame {
   width: 100%;
@@ -59,7 +150,7 @@ body {
 }
 
 /* =====================
-   Tablas internas si las hubiera
+   TABLAS INTERNAS
 ===================== */
 .territorio-card table {
   width: 100%;
@@ -84,17 +175,38 @@ body {
 }
 
 /* =====================
+   Bloques internos (opcional, como vida y ministerio)
+===================== */
+.bloque {
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 14px;
+  background: #e8f0fe;
+}
+
+.bloque.tesoros { background: #fff3e0; }
+.bloque.maestros { background: #e0f7fa; }
+.bloque.vida { background: #e8f5e9; }
+
+.bloque-titulo {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =====================
    Responsive móviles
 ===================== */
 @media (max-width: 600px) {
-
   .container {
     padding: 10px 8px;
   }
 
-  .container .title {
+  .title {
     font-size: 1.2rem;
-    flex-wrap: wrap;
+    gap: 6px;
   }
 
   .territorio-card {
@@ -112,5 +224,81 @@ body {
     font-size: 0.8rem;
     padding: 6px 4px;
     word-break: break-word;
+  }
+
+  .bloque-titulo {
+    font-size: 1rem;
+  }
+}
+
+/* =====================
+   Responsive tablet/desktop
+===================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 1.35rem;
+  }
+
+  .territorio-card {
+    padding: 14px;
+  }
+
+  .pdf-frame {
+    height: 70vh;
+  }
+}
+
+/* =====================
+   Scrollbars para PDFs largos
+===================== */
+.pdf-frame::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pdf-frame::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* =====================
+   Selector de semana (opcional)
+===================== */
+.semana-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.semana-selector button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1976d2;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.semana-selector button:hover {
+  background-color: #115293;
+}
+
+.semana-selector button.active {
+  background-color: #0d3c71;
+}
+
+@media (max-width: 600px) {
+  .semana-selector {
+    gap: 6px;
+  }
+
+  .semana-selector button {
+    font-size: 0.85rem;
+    padding: 4px 8px;
   }
 }
