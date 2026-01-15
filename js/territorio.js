@@ -1,7 +1,7 @@
 (() => {
   const SHEET_ID = '1HwjfPfP9xR0Eocc8lE0RCGqhjmDuu_F0rp8N_87JxRo';
 
-  const URL_TERRITORIO = `https://opensheet.elk.sh/${SHEET_ID}/territorio`;
+  const URL_TERRITORIO = `https://opensheet.elk.sh/${SHEET_ID}/urls`;
   const URL_TITULOS    = `https://opensheet.elk.sh/${SHEET_ID}/titulos`;
 
   const container = document.getElementById('territorioContainer');

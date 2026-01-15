@@ -1,169 +1,162 @@
-/* ===== BLOQUES ===== */
-.bloque {
-  border-radius: 10px;
-  margin-top: 25px;
-  padding: 15px;
+/* =====================
+   Reset y tipografía
+===================== */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* TITULO */
-.bloque-titulo {
+body {
+  background-color: #f4f6f8;
+  color: #2c2c2c;
+}
+
+/* =====================
+   Contenedor principal
+===================== */
+.container {
+  max-width: 820px; /* antes 1100 */
+  margin: auto;
+  padding: 16px;
+}
+
+/* =====================
+   Títulos
+===================== */
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
-  font-size: 1.1rem;
+}
+
+/* =====================
+   Tarjetas principales
+===================== */
+.sonido-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 0 auto 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+}
+
+/* =====================
+   Bloques internos
+===================== */
+.bloque {
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 14px;
+  background: #e8f0fe; /* mantiene color suave distintivo */
+}
+
+.bloque.tesoros { background: #fff3e0; }      /* dorado suave */
+.bloque.maestros { background: #e0f7fa; }     /* celeste suave */
+.bloque.vida { background: #e8f5e9; }         /* verde suave */
+
+/* =====================
+   Títulos de bloque
+===================== */
+.bloque-titulo {
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.bloque-titulo .icono {
-  font-size: 1.4rem;
-}
-
-/* ===== COLORES OFICIALES ===== */
-
-/* TESOROS */
-.bloque.tesoros {
-  background: #e9f0fb;
-}
-
-.bloque.tesoros .bloque-titulo {
-  color: #1e4fa1;
-}
-
-/* MAESTROS */
-.bloque.maestros {
-  background: #fff4cc;
-}
-
-.bloque.maestros .bloque-titulo {
-  color: #8a6d00;
-}
-
-/* VIDA CRISTIANA */
-.bloque.vida {
-  background: #fde2dc;
-}
-
-.bloque.vida .bloque-titulo {
-  color: #9b2c1a;
-}
-
-/* ===== TABLA ===== */
+/* =====================
+   Tablas internas
+===================== */
 .sonido-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .sonido-table td {
-  padding: 8px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 6px;
   font-size: 0.95rem;
+  word-wrap: break-word;
 }
 
-.sonido-table tr:last-child td {
-  border-bottom: none;
+.sonido-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
-.sonido-table .titulo {
-  width: 60%;
-}
+.titulo { font-weight: 600; }
+.lector, .ayudante { text-align: right; }
 
-.sonido-table .lector,
-.sonido-table .ayudante {
-  text-align: right;
-  font-weight: 500;
-}
-
-/* ===== FIX filas alternadas (vida y ministerio) ===== */
-.bloque .sonido-table tr:nth-child(even),
-.bloque .sonido-table tr:nth-child(odd) {
-  background: transparent !important;
-}
-
-.bloque .sonido-table td {
-  background: transparent !important;
+/* =====================
+   Selector de semana
+===================== */
+.semana-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .semana-selector button {
   padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  background: #f1f4f7;
+  border: none;
+  border-radius: 6px;
+  background-color: #1976d2;
+  color: #fff;
   cursor: pointer;
-  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.semana-selector button:hover {
+  background-color: #115293;
 }
 
 .semana-selector button.active {
-  background: #3a5f7d;
-  color: white;
-  border-color: #3a5f7d;
+  background-color: #0d3c71;
 }
 
-.semana-selector {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.sonido-card h2 {
-  font-size: 1.1rem;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-/* ===== RESPONSIVE MOBILE ===== */
+/* =====================
+   Responsive móviles
+===================== */
 @media (max-width: 600px) {
-
   .container {
-    padding: 10px;
+    padding: 10px 8px;
   }
 
-  .title {
-    font-size: 1.2rem;
-    text-align: center;
+  .sonido-card {
+    padding: 14px;
   }
 
   .bloque {
     padding: 12px;
-    margin-top: 18px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
   .bloque-titulo {
     font-size: 1rem;
   }
 
-  /* Tabla → formato vertical en celular */
-  .sonido-table tr {
-    display: block;
-    margin-bottom: 10px;
-  }
-
   .sonido-table td {
-    display: block;
-    text-align: left !important;
-    padding: 6px 0;
     font-size: 0.9rem;
+    padding: 6px 4px;
   }
 
-  .sonido-table td.titulo {
-    font-weight: 600;
-  }
-
-  .sonido-table td.lector,
-  .sonido-table td.ayudante {
-    color: #555;
-    font-size: 0.85rem;
-  }
-
-  /* Selector de semanas */
   .semana-selector {
-    flex-wrap: wrap;
     gap: 6px;
   }
 
   .semana-selector button {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+    font-size: 0.85rem;
+    padding: 4px 8px;
   }
 }

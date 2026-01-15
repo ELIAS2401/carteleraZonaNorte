@@ -1,37 +1,123 @@
+/* =====================
+   Reset y tipografía
+===================== */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #2c2c2c;
+}
+
+/* =====================
+   Contenedor principal
+===================== */
+.app-container,
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px;
+}
+
+/* =====================
+   Títulos principales
+===================== */
+.title {
+  text-align: center;
+  margin: 16px 0 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2a33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =====================
+   Tarjetas
+===================== */
 .sonido-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
 .sonido-card h2 {
-    text-align: center;
-    margin-bottom: 12px;
-    color: #1f2a33;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 6px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #1f2a33;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
 }
 
+/* =====================
+   Tablas
+===================== */
 .sonido-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
 }
 
 .sonido-table th {
-    background: #f1f4f7;
-    padding: 10px;
-    text-align: left;
-    color: #3a5f7d;
+  background: #f1f4f7;
+  padding: 10px;
+  text-align: left;
+  color: #3a5f7d;
 }
 
 .sonido-table td {
-    padding: 10px;
-    border-top: 1px solid #eee;
+  padding: 10px;
+  border-top: 1px solid #eee;
 }
 
 .sonido-table tr:nth-child(even) {
-    background: #fafbfc;
+  background: #fafbfc;
+}
+
+/* =====================
+   Responsive móviles
+===================== */
+@media (max-width: 600px) {
+
+  .app-container,
+  .container {
+    padding: 10px 8px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .sonido-card {
+    padding: 12px;
+  }
+
+  .sonido-card h2 {
+    font-size: 1rem;
+    padding-bottom: 4px;
+  }
+
+  .sonido-table th,
+  .sonido-table td {
+    font-size: 0.8rem;
+    padding: 6px 4px;
+  }
+
+  .sonido-table th {
+    white-space: nowrap;
+  }
+
+  .sonido-table td {
+    word-break: break-word;
+  }
 }
