@@ -6,7 +6,8 @@
 
 .title {
   text-align: center;
-  margin: 20px 0;
+  margin: 16px 0 20px;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #1f2a33;
 }
@@ -27,30 +28,35 @@
 .card {
   background: white;
   border-radius: 18px;
-  padding: 24px 16px;
+  padding: 20px 14px;
   text-align: center;
   box-shadow: 0 6px 16px rgba(0,0,0,.08);
 }
 
 .card i {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: #3a5f7d;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .card h3 {
-  margin: 8px 0 6px;
-  font-size: 1.15rem;
+  margin: 6px 0;
+  font-size: 1.1rem;
 }
 
 .card p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
+  line-height: 1.4;
 }
 
-/* DESKTOP */
+/* TABLET / DESKTOP */
 @media (min-width: 700px) {
   .cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .title {
+    font-size: 1.6rem;
   }
 }
