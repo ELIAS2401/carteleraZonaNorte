@@ -17,7 +17,8 @@ body {
    Contenedor principal
 ===================== */
 .container {
-  max-width: 820px; /* antes 1100 */
+  max-width: 820px;
+  /* antes 1100 */
   margin: auto;
   padding: 16px;
 }
@@ -52,12 +53,25 @@ body {
   border-radius: 10px;
   margin-top: 20px;
   padding: 14px;
-  background: #e8f0fe; /* mantiene color suave distintivo */
+  background: #e8f0fe;
+  /* mantiene color suave distintivo */
 }
 
-.bloque.tesoros { background: #fff3e0; }      /* dorado suave */
-.bloque.maestros { background: #e0f7fa; }     /* celeste suave */
-.bloque.vida { background: #e8f5e9; }         /* verde suave */
+.bloque.tesoros {
+  background: #fff3e0;
+}
+
+/* dorado suave */
+.bloque.maestros {
+  background: #e0f7fa;
+}
+
+/* celeste suave */
+.bloque.vida {
+  background: #e8f5e9;
+}
+
+/* verde suave */
 
 /* =====================
    Títulos de bloque
@@ -79,6 +93,20 @@ body {
   table-layout: fixed;
 }
 
+.sonido-table th:nth-child(1),
+.sonido-table td:nth-child(1) {
+  width: 60%;
+}
+
+.sonido-table th:nth-child(2),
+.sonido-table td:nth-child(2),
+.sonido-table th:nth-child(3),
+.sonido-table td:nth-child(3) {
+  width: 20%;
+  text-align: center;
+}
+
+
 .sonido-table td {
   padding: 8px 6px;
   font-size: 0.95rem;
@@ -89,8 +117,29 @@ body {
   background-color: rgba(0, 0, 0, 0.02);
 }
 
-.titulo { font-weight: 600; }
-.lector, .ayudante { text-align: right; }
+.sonido-table th {
+  text-align: left;
+  font-size: 0.85rem;
+  padding: 8px 6px;
+  background: rgba(0,0,0,0.05);
+  color: #3a5f7d;
+  font-weight: 600;
+}
+
+
+.titulo {
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+.conductor,
+.lector,
+.ayudante {
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 
 /* =====================
    Selector de semana
@@ -124,39 +173,37 @@ body {
    Responsive móviles
 ===================== */
 @media (max-width: 600px) {
-  .container {
-    padding: 10px 8px;
+  .sonido-table thead {
+    display: none;
   }
 
-  .sonido-card {
-    padding: 14px;
-  }
-
-  .bloque {
-    padding: 12px;
-  }
-
-  .title {
-    font-size: 1.2rem;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .bloque-titulo {
-    font-size: 1rem;
+  .sonido-table tr {
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.6);
+    margin-bottom: 12px;
   }
 
   .sonido-table td {
-    font-size: 0.9rem;
-    padding: 6px 4px;
+    display: block;
+    text-align: left;
+    padding: 4px 0;
   }
 
-  .semana-selector {
-    gap: 6px;
+  .titulo {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
   }
 
-  .semana-selector button {
-    font-size: 0.85rem;
-    padding: 4px 8px;
+  .conductor::before {
+    content: "👤 Conductor: ";
+    font-weight: 600;
+  }
+
+  .lector::before {
+    content: "📖 Lector: ";
+    font-weight: 600;
   }
 }
+
