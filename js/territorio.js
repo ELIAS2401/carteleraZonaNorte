@@ -1,8 +1,10 @@
 (() => {
   const SHEET_ID = '1HwjfPfP9xR0Eocc8lE0RCGqhjmDuu_F0rp8N_87JxRo';
 
-  const URL_TERRITORIO = `https://opensheet.elk.sh/${SHEET_ID}/urls`;
-  const URL_TITULOS    = `https://opensheet.elk.sh/${SHEET_ID}/titulos`;
+  // 👉 ruta local o de GitHub (raw)
+  const IMG_TERRITORIO = '../territorio.jpg';
+
+  const URL_TITULOS = `https://opensheet.elk.sh/${SHEET_ID}/titulos`;
 
   const container = document.getElementById('territorioContainer');
   const titulo = document.getElementById('tituloTerritorio');
@@ -15,27 +17,23 @@
     .then(data => {
       const fila = data.find(f => f.seccion === 'territorio');
       if (fila && titulo) {
-        titulo.innerHTML = `<i class="fa-solid fa-map-location-dot"></i> ${fila.titulo}`;
+        titulo.innerHTML = `
+          <i class="fa-solid fa-map-location-dot"></i>
+          ${fila.titulo}
+        `;
       }
-    });
-
-  // 👉 cargar PDF
-  fetch(URL_TERRITORIO)
-    .then(res => res.json())
-    .then(data => {
-      if (!data.length) return;
-
-      const pdfUrl = data[0].PDF_URL;
-
-      container.innerHTML = `
-        <div class="territorio-card">
-          <iframe 
-            src="${pdfUrl}" 
-            class="pdf-frame"
-            loading="lazy">
-          </iframe>
-        </div>
-      `;
     })
     .catch(err => console.error(err));
+
+  // 👉 mostrar imagen (SIN fetch)
+  container.innerHTML = `
+    <div class="territorio-card">
+      <img
+        src="${IMG_TERRITORIO}"
+        alt="Mapa del territorio"
+        class="territorio-img"
+        loading="lazy"
+      />
+    </div>
+  `;
 })();

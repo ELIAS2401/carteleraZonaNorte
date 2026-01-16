@@ -302,3 +302,11 @@ a {
     padding: 4px 8px;
   }
 }
+.territorio-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  max-height: 85vh;
+  object-fit: contain;
+}
