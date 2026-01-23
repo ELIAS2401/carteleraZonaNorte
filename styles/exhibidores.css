@@ -97,6 +97,14 @@
   .sonido-table td:nth-child(5)::before { content: "📍 Lugar"; }
 }
 
+.img-territorio {
+  max-width: 220px;
+  width: 100%;
+  display: block;
+  margin: 12px auto 24px;
+  opacity: 0.9;
+}
+
 /* ================= DESKTOP ================= */
 
 @media (min-width: 641px) {
