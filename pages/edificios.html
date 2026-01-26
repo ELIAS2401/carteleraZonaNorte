@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edificios</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/territorio.css">
+    <link rel="stylesheet" href="../styles/edificios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -28,15 +29,16 @@
     </header>
 
     <main class="container">
-        <h1 class="title" id="tituloEdificios">
-            <i class="fa-solid fa-map-location-dot"></i>
-            Edificios
+        <h1 class="title" id="titulo">
+            <i class="fa-solid fa-building"></i>
         </h1>
+        <div class="territorios-grid" id="territoriosContainer"></div>
 
-        <div id="edificiosContainer"></div>
+        <div id="edificiosContainer" class="predicacion-grid"></div>
     </main>
 
     <script src="../js/edificios.js"></script>
+
     <script src="../js/header.js"></script>
 </body>
 
