@@ -34,10 +34,10 @@
             if (!pdfUrl) return;
 
             container.innerHTML = `
-      <div class="negocio-card">
-        <iframe src="${pdfUrl}" class="pdf-frame"></iframe>
-      </div>
-    `;
+            <div class="negocio-card">
+                <iframe src="${pdfUrl}" class="pdf-frame"></iframe>
+            </div>
+            `;
         })
         .catch(err => console.error(err));
 })();
