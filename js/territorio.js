@@ -28,11 +28,12 @@
   // 👉 mostrar imagen (SIN fetch)
   container.innerHTML = `
     <div class="territorio-card">
-      <iframe
-        src="${URL_PDF}"
-        class="pdf-frame"
+      <img
+        src="${IMG_TERRITORIO}"
+        alt="Mapa del territorio"
+        class="territorio-img"
         loading="lazy"
-      ></iframe>
+      />
     </div>
   `;
 })();
