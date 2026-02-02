@@ -103,7 +103,7 @@
     if (!f) return '';
 
     return `
-      <h3 style="margin-top:20px">Reunión Fin de Semana</h3>
+      <h3 style="margin-top:20px">REUNIÓN DE FIN DE SEMANA</h3>
       <table class="sonido-table">
         <tr><td>Fecha</td><td>${f.FECHA}</td></tr>
         <tr><td>Presidente</td><td>${f.PRESIDENTE}</td></tr>
