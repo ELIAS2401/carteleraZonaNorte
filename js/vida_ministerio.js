@@ -68,6 +68,13 @@
       vida: '🐑'
     };
 
+    // Detectar si hay conductores o lectores cargados
+    const hayConductor = filas.some(f => f.CONDUCTOR && f.CONDUCTOR.trim() !== '');
+    const hayLector = filas.some(f => f.LECTOR && f.LECTOR.trim() !== '');
+
+    // Cambiar nombre de columna en Maestros
+    const nombreLector = tipo === 'maestros' ? 'Ayudante' : 'Lector';
+
     return `
     <section class="bloque ${tipo}">
       <h3 class="bloque-titulo">
@@ -79,16 +86,22 @@
         <thead>
           <tr>
             <th>Tema</th>
-            <th>Conductor</th>
-            <th>Lector</th>
+            ${hayConductor ? '<th>Conductor</th>' : ''}
+            ${hayLector ? `<th>${nombreLector}</th>` : ''}
           </tr>
         </thead>
         <tbody>
           ${filas.map(f => `
             <tr>
-              <td class="titulo">${f.TITULO}</td>
-              <td class="conductor">${f.CONDUCTOR || '—'}</td>
-              <td class="lector">${f.LECTOR || '—'}</td>
+              <td class="titulo">${f.TITULO || ''}</td>
+              ${hayConductor && f.CONDUCTOR && f.CONDUCTOR.trim() !== ''
+        ? `<td class="conductor">${f.CONDUCTOR}</td>`
+        : hayConductor ? '<td></td>' : ''
+      }
+              ${hayLector && f.LECTOR && f.LECTOR.trim() !== ''
+        ? `<td class="lector">${f.LECTOR}</td>`
+        : hayLector ? '<td></td>' : ''
+      }
             </tr>
           `).join('')}
         </tbody>
@@ -98,17 +111,32 @@
   }
 
 
+
   function renderFinSemana(data, semana) {
     const f = data.find(x => x.SEMANA === semana);
     if (!f) return '';
 
     return `
-      <h3 style="margin-top:20px">REUNIÓN DE FIN DE SEMANA</h3>
-      <table class="sonido-table">
-        <tr><td>Fecha</td><td>${f.FECHA}</td></tr>
-        <tr><td>Presidente</td><td>${f.PRESIDENTE}</td></tr>
-        <tr><td>Lectura Atalaya</td><td>${f.LECTURA_ATALAYA}</td></tr>
-      </table>
-    `;
+    <section class="bloque finde">
+      <h3 class="bloque-titulo">
+        📅 REUNIÓN DE FIN DE SEMANA
+      </h3>
+
+      <div class="finde-item">
+        <span class="finde-label">Fecha</span>
+        <span class="finde-value">${f.FECHA}</span>
+      </div>
+
+      <div class="finde-item">
+        <span class="finde-label">Presidente</span>
+        <span class="finde-value">${f.PRESIDENTE}</span>
+      </div>
+
+      <div class="finde-item">
+        <span class="finde-label">Lectura Atalaya</span>
+        <span class="finde-value">${f.LECTURA_ATALAYA}</span>
+      </div>
+    </section>
+  `;
   }
 })();
