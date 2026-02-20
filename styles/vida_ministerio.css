@@ -246,12 +246,12 @@ body {
   }
 
   .conductor::before {
-    content: "👤 ";
+    content: "👤 Conductor: ";
     font-weight: 600;
   }
 
   .lector::before {
-    content: "📖 ";
+    content: "📖 Lector: ";
     font-weight: 600;
   }
 
@@ -264,7 +264,7 @@ body {
   }
 
   .bloque.maestros .lector::before {
-    content: "🤝 ";
+    content: "🤝 Ayudante: ";
   }
 
   .bloque.finde {
